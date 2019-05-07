@@ -13,7 +13,7 @@ import javax.jws.WebService;
 import java.util.List;
 
 @NoArgsConstructor
-@WebService
+@WebService(endpointInterface = "ru.burmistrov.soapTM.api.endpoint.ITaskEndpoint")
 @Service
 public class TaskEndpoint implements ITaskEndpoint {
 

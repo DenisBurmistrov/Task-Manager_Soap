@@ -15,7 +15,7 @@ import java.util.Date;
 import java.util.List;
 
 @NoArgsConstructor
-@WebService
+@WebService(endpointInterface = "ru.burmistrov.soapTM.api.endpoint.IProjectEndpoint")
 @Service
 public class ProjectEndpoint implements IProjectEndpoint {
 

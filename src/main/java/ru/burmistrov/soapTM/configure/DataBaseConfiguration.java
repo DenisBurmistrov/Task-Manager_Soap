@@ -23,12 +23,12 @@ import java.util.Properties;
 @EnableJpaRepositories("ru.burmistrov.soapTM.repository")
 @EnableTransactionManagement
 @EnableJdbcHttpSession
-public class DataBaseConfig {
+public class DataBaseConfiguration {
 
     private final Environment env;
 
     @Autowired
-    public DataBaseConfig(Environment env) {
+    public DataBaseConfiguration(Environment env) {
         this.env = env;
     }
 
