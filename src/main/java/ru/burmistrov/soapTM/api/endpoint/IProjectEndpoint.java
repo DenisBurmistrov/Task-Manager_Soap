@@ -15,7 +15,7 @@ public interface IProjectEndpoint {
     @WebMethod
     void removeProjectById
             (@WebParam(name = "userId") @NotNull final String userId,
-             @WebParam(name = "projectId") @NotNull String projectId) throws Exception;
+             @WebParam(name = "projectId") @NotNull final String projectId) throws Exception;
 
     @Nullable
     @WebMethod

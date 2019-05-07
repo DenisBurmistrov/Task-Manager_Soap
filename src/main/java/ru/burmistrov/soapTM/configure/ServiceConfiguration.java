@@ -1,5 +1,6 @@
 package ru.burmistrov.soapTM.configure;
 
+import org.apache.cxf.Bus;
 import org.apache.cxf.bus.spring.SpringBus;
 import org.apache.cxf.jaxws.EndpointImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +27,7 @@ public class ServiceConfiguration {
         this.taskEndpoint = taskEndpoint;
     }
 
-    @Bean
+    @Bean(name = Bus.DEFAULT_BUS_ID)
     public SpringBus cxf() {
         return new SpringBus();
     }
