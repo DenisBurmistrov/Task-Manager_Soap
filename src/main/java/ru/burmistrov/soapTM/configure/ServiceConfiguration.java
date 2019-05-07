@@ -33,14 +33,14 @@ public class ServiceConfiguration {
     }
 
     @Bean
-    public Endpoint ProjectEndpoint() {
+    public Endpoint projectEndpoint() {
         EndpointImpl endpoint = new EndpointImpl(cxf(), projectEndpoint);
         endpoint.publish("/projectEndpoint");
         return endpoint;
     }
 
     @Bean
-    public Endpoint TaskEndpoint() {
+    public Endpoint taskEndpoint() {
         EndpointImpl endpoint = new EndpointImpl(cxf(), taskEndpoint);
         endpoint.publish("/taskEndpoint");
         return endpoint;
