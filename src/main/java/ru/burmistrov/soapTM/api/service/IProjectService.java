@@ -1,4 +1,4 @@
-package ru.burmistrov.soapTM.service;
+package ru.burmistrov.soapTM.api.service;
 
 import com.sun.istack.NotNull;
 import com.sun.istack.Nullable;

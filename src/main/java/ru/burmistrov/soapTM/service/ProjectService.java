@@ -4,6 +4,7 @@ import com.sun.istack.NotNull;
 import com.sun.istack.Nullable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import ru.burmistrov.soapTM.api.service.IProjectService;
 import ru.burmistrov.soapTM.entity.Project;
 import ru.burmistrov.soapTM.entity.dto.ProjectDto;
 import ru.burmistrov.soapTM.entity.enumerated.Status;
