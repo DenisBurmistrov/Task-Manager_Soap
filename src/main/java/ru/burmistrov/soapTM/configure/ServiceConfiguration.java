@@ -17,31 +17,22 @@ import javax.xml.ws.Endpoint;
 @ComponentScan("ru.burmistrov.soapTM")
 public class ServiceConfiguration {
 
-    private final IProjectEndpoint projectEndpoint;
-
-    private final ITaskEndpoint taskEndpoint;
-
-    @Autowired
-    public ServiceConfiguration(IProjectEndpoint projectEndpoint, ITaskEndpoint taskEndpoint) {
-        this.projectEndpoint = projectEndpoint;
-        this.taskEndpoint = taskEndpoint;
-    }
-
     @Bean(name = Bus.DEFAULT_BUS_ID)
-    public SpringBus cxf() {
+    public SpringBus springBus() {
         return new SpringBus();
     }
 
     @Bean
-    public Endpoint projectEndpoint() {
-        EndpointImpl endpoint = new EndpointImpl(cxf(), projectEndpoint);
+    public Endpoint endpointProject(IProjectEndpoint projectEndpoint) {
+        EndpointImpl endpoint = new EndpointImpl(springBus(), projectEndpoint);
+        System.out.println(endpoint.getEndpointName());
         endpoint.publish("/projectEndpoint");
         return endpoint;
     }
 
     @Bean
-    public Endpoint taskEndpoint() {
-        EndpointImpl endpoint = new EndpointImpl(cxf(), taskEndpoint);
+    public Endpoint endpointTask(ITaskEndpoint taskEndpoint) {
+        EndpointImpl endpoint = new EndpointImpl(springBus(), taskEndpoint);
         endpoint.publish("/taskEndpoint");
         return endpoint;
     }

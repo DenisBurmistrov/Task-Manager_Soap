@@ -18,8 +18,7 @@ public class AppInitializer implements WebApplicationInitializer {
         container.addListener(new ContextLoaderListener(context));
         ServletRegistration.Dynamic dispatcher
                 = container.addServlet("dispatcher", new CXFServlet());
-        dispatcher.addMapping("/services");
-
+        dispatcher.addMapping("/services/*");
     }
 }
 
