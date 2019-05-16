@@ -10,7 +10,7 @@ import javax.jws.WebService;
 public interface IAuthEndpoint {
 
     @WebMethod
-    String auth
+    void auth
             (@WebParam(name = "username") @NotNull final String username,
              @WebParam(name = "password") @NotNull final String password) throws Exception;
 }
