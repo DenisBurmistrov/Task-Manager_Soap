@@ -14,8 +14,7 @@ public interface ITaskEndpoint {
 
     @WebMethod
     void updateTaskById
-            (@WebParam(name = "userId") @NotNull final String userId,
-             @WebParam(name = "projectId") @NotNull final String projectId,
+            (@WebParam(name = "projectId") @NotNull final String projectId,
              @WebParam(name = "taskId") @NotNull final String taskId,
              @WebParam(name = "newName") @NotNull final String newName,
              @WebParam(name = "description") @NotNull final String description,
@@ -24,27 +23,23 @@ public interface ITaskEndpoint {
     @WebMethod
     @Nullable
     TaskDto createTask
-            (@WebParam(name = "userId") @NotNull final String userId,
-             @WebParam(name = "projectId") @NotNull final String projectId,
+            (@WebParam(name = "projectId") @NotNull final String projectId,
              @WebParam(name = "name") @NotNull final String name,
              @WebParam(name = "description") @NotNull final String description,
              @WebParam(name = "dateEnd") @NotNull final String dateEnd) throws Exception;
 
     @WebMethod
     void removeTaskById
-            (@WebParam(name = "userId") @NotNull final String userId,
-             @WebParam(name = "taskId") @NotNull final String taskId) throws Exception;
+            (@WebParam(name = "taskId") @NotNull final String taskId) throws Exception;
 
 
     @WebMethod
     @Nullable
     List<TaskDto> findAllTasksInProject
-            (@WebParam @NotNull final String userId,
-             @WebParam @NotNull final String projectId) throws Exception;
+            (@WebParam @NotNull final String projectId) throws Exception;
 
     @Nullable
     @WebMethod
     TaskDto findOneTaskById
-            (@WebParam(name = "userId") @NotNull final String userId,
-             @WebParam(name = "projectId") @NotNull final String projectId) throws Exception;
+            (@WebParam(name = "projectId") @NotNull final String projectId) throws Exception;
 }
