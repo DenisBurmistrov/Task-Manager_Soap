@@ -25,7 +25,6 @@ public class ServiceConfiguration {
     @Bean
     public Endpoint endpointProject(IProjectEndpoint projectEndpoint) {
         EndpointImpl endpoint = new EndpointImpl(springBus(), projectEndpoint);
-        System.out.println(endpoint.getEndpointName());
         endpoint.publish("/projectEndpoint");
         return endpoint;
     }

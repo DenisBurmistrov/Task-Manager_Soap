@@ -19,7 +19,7 @@ import java.util.Objects;
 import java.util.Properties;
 
 @Configuration
-@PropertySource("classpath:application.properties")
+@PropertySource("classpath:/application.properties")
 @EnableJpaRepositories("ru.burmistrov.soapTM.repository")
 @EnableTransactionManagement
 @EnableJdbcHttpSession

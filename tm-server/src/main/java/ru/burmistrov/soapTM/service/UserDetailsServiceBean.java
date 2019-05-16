@@ -30,7 +30,6 @@ public class UserDetailsServiceBean implements UserDetailsService {
         CustomUser customUser = new CustomUser
                 (username, Objects.requireNonNull(user.getPassword()),roles);
         customUser.setUser(user);
-        System.out.println(customUser);
         return customUser;
     }
 

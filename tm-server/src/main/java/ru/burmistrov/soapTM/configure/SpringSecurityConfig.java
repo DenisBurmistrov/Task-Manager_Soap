@@ -15,7 +15,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration
-@ComponentScan("ru.burmistrov.taskManager")
+@ComponentScan("ru.burmistrov.soapTM")
 @EnableWebSecurity
 @EnableGlobalAuthentication
 @EnableGlobalMethodSecurity(prePostEnabled = true, securedEnabled = true, jsr250Enabled = true)
@@ -39,7 +39,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .authorizeRequests()
                 .antMatchers("/").permitAll()
-                .antMatchers("/signUp", "/resources/**").permitAll()
+                .antMatchers("/signUp", "/services/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
