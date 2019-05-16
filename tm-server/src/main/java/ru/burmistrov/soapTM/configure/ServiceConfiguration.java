@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
+import ru.burmistrov.soapTM.api.endpoint.IAuthEndpoint;
 import ru.burmistrov.soapTM.api.endpoint.IProjectEndpoint;
 import ru.burmistrov.soapTM.api.endpoint.ITaskEndpoint;
 
@@ -33,6 +34,13 @@ public class ServiceConfiguration {
     public Endpoint endpointTask(ITaskEndpoint taskEndpoint) {
         EndpointImpl endpoint = new EndpointImpl(springBus(), taskEndpoint);
         endpoint.publish("/taskEndpoint");
+        return endpoint;
+    }
+
+    @Bean
+    public Endpoint endpointAuth(IAuthEndpoint authEndpoint) {
+        EndpointImpl endpoint = new EndpointImpl(springBus(), authEndpoint);
+        endpoint.publish("/authEndpoint");
         return endpoint;
     }
 
