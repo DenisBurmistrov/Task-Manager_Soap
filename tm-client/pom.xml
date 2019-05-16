@@ -91,6 +91,11 @@
                                         http://localhost:8080/services/taskEndpoint?wsdl
                                     </wsdl>
                                 </wsdlOption>
+                                <wsdlOption>
+                                    <wsdl>
+                                        http://localhost:8080/services/authEndpoint?wsdl
+                                    </wsdl>
+                                </wsdlOption>
                             </wsdlOptions>
                         </configuration>
                         <goals><goal>wsdl2java</goal></goals>
