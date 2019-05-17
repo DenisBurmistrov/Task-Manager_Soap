@@ -42,8 +42,8 @@ public class TaskService {
 
     public void merge(
             @NotNull final List<String> cookies, @NotNull final String projectId, @NotNull final String taskId,
-            @NotNull final String id, @NotNull final String name, @NotNull final String description,
-            @NotNull final String dateEnd) throws Exception_Exception {
+            @NotNull final String name, @NotNull final String description, @NotNull final String dateEnd)
+            throws Exception_Exception {
         setCookie(cookies);
         taskEndpoint.updateTaskById(projectId, taskId ,name, description, dateEnd);
     }
