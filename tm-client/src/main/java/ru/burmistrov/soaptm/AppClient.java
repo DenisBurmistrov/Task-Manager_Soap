@@ -11,9 +11,7 @@ import ru.burmistrov.soaptm.endpoint.AuthEndpointService;
 
 import javax.xml.ws.BindingProvider;
 import javax.xml.ws.handler.MessageContext;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class AppClient {
 
@@ -21,16 +19,15 @@ public class AppClient {
         ApplicationContext context = new AnnotationConfigApplicationContext(SpringConfiguration.class);
         IAuthEndpoint authEndpoint = context.getBean(IAuthEndpoint.class);
         IProjectEndpoint projectEndpoint = context.getBean(IProjectEndpoint.class);
-        authEndpoint.auth("admin", "admin");
-        Map<String, List<String>> map = (Map<String, List<String>>)
-                ((BindingProvider)authEndpoint).getResponseContext().get(MessageContext.HTTP_RESPONSE_HEADERS);
-        System.out.println(map.get("Set-Cookie"));
 
-        ((BindingProvider)projectEndpoint).getRequestContext().put(
+        /*((BindingProvider)projectEndpoint).getRequestContext().put(
                 MessageContext.HTTP_REQUEST_HEADERS,
                 Collections.singletonMap("Cookie", Collections.singletonList(map.get("Set-Cookie"))
                 )
-        );
+        );*/
+
+
+
     }
 
 }

@@ -36,10 +36,10 @@ public interface ITaskEndpoint {
     @WebMethod
     @Nullable
     List<TaskDto> findAllTasksInProject
-            (@WebParam @NotNull final String projectId) throws Exception;
+            (@WebParam(name = "projectId") @NotNull final String projectId) throws Exception;
 
     @Nullable
     @WebMethod
     TaskDto findOneTaskById
-            (@WebParam(name = "projectId") @NotNull final String projectId) throws Exception;
+            (@WebParam(name = "taskId") @NotNull final String taskId) throws Exception;
 }
